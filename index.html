@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+
+<body>
+    <h1>捐赠管理</h1>
+    <div class="box">
+        受捐单位：
+        <select id="selSearchOrg">
+            <option>全部</option>
+        </select>
+        <input type="button" id="btnSearch" value="查询" />
+        <input type="button" id="btnPre" value="上一页" />
+        <input type="button" id="btnNext" value="下一页" />
+        <span id="spanPageIndex"></span>/<span id="spanPageCount"></span>
+        <input type="text" id="number"> <button id="jump">跳转</button>
+    </div>
+    <div class="box">
+        捐赠人：<input type="text" id="txtName" autocomplete="off"/>
+        受捐单位：<select id="selAddOrg">
+            <option value="-1" >请选择</option>
+           
+        </select>
+        金额：<input type="text" id="txtMoney" autocomplete="off" />
+        受捐日期：<input type="text" class="demo-input" placeholder="请选择日期" autocomplete="off"  id="timer">
+        <input type="button" id="btnAdd" value="新增" />
+    </div>
+    <table id="tbData">
+        <thead>
+            <tr>
+                <th>序号</th>
+                <th>捐赠人</th>
+                <th>受捐单位</th>
+                <th>金额</th>
+                <th>受捐日期</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td><input type="text" value=""></td>
+                <td>壹基金</td>
+                <td>10000</td>
+                <td>2013-01-17</td>
+                <td><a href="#" id="alter">改</a> <a href="#" id="delete">删</a></td>
+            </tr>
+        </tbody>
+    </table>
+    <script src="./js/jQuery.js"></script>
+    <script src="./js/index.js"></script>
+    <script src="./laydate/laydate.js"></script>
+    <script>
+        lay('#version').html('-v' + laydate.v);
+        //执行一个laydate实例
+        laydate.render({
+            elem: '#timer' //指定元素
+        });
+    </script>
+</body>
+
+</html>
